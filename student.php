@@ -29,40 +29,17 @@
       $student->_sidiCode = $_POST["sidi_code"];
       $student->_taxCode = $_POST["tax_code"];
       $student->add($student);
-      echo "Row added to db";
+      echo "Aggiunto nel db";
       break;
 
     case 'DELETE': 
-      $uri = explode('/', $_SERVER["REQUEST_URI"]); 
-      if(count($uri) != 0) 
-      {
-        $student->delete($uri[count($uri)-1]); 
-        echo "Row deleted";
-      }
-      else echo "ID missing";
       break;
 
-    case 'PUT': 
-      $uri = explode('/', $_SERVER["REQUEST_URI"]); 
-      if(count($uri) != 0)
-      {
-        $body = file_get_contents("php://input"); 
-        $decodeBody = json_decode($body, true);
-
-        $student->_id = $uri[count($uri)-1];
-        $student->_name = $decodeBody["_name"];
-        $student->_surname = $decodeBody["_surname"];
-        $student->_sidiCode = $decodeBody["_sidiCode"];
-        $student->_taxCode = $decodeBody["_taxCode"];
-  
-        $student->update($student);
-        echo "Row updated";
-      }
-      else echo "ID missing";
+    case 'PUT':
       break;
 
     default: 
-      echo "Error"; 
+      echo "Errore"; 
       break;
   }
 ?>

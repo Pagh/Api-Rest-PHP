@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="student.php" method="GET">
-        <input type="submit" value="get all students"><br>
+        <input type="submit" value="Mostra studenti"><br>
         
         <label for="text_get">Get studenti</label>
         <select name="id">
@@ -33,7 +33,6 @@
     </form> 
     <br><br>
     <form action="student.php" method="POST">
-        <legend>Data insert form</legend>
         <label>Nome: </label>
         <input name="name" required><br>
         <label>Cognome: </label>
